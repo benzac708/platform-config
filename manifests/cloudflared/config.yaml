@@ -18,4 +18,6 @@ data:
         service: http://monitoring-grafana.monitoring.svc.cluster.local:80
       - hostname: argocd.zachara.dev
         service: http://argocd-server.argocd.svc.cluster.local:80
+      - hostname: warden.zachara.dev
+        service: http://warden.apps.svc.cluster.local:8080
       - service: http_status:404
