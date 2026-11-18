@@ -7,7 +7,7 @@ metadata:
   namespace: platform
 data:
   config.yaml: |
-    tunnel: <tunnel-id>
+    tunnel: 32e7ab29-2bbc-4f2f-ba86-6f139d50b7b4
     credentials-file: /etc/cloudflared/creds.json
     ingress:
       - hostname: task-api.zachara.dev
