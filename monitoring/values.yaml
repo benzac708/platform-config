@@ -10,6 +10,8 @@ grafana:
       enabled: true
       org_name: Main Org.
       org_role: Viewer
+    dashboards:
+      default_home_dashboard_path: /d/portfolio/portfolio
   ingress:
     enabled: false  # Grafana is exposed via Cloudflare Tunnel, not Ingress
 
