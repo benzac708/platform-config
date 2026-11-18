@@ -12,6 +12,7 @@ grafana:
       org_role: Viewer
   env:
     GF_DASHBOARDS_DEFAULT_HOME_DASHBOARD_PATH: /d/portfolio/portfolio
+    GF_DASHBOARDS_DEFAULT_HOME_DASHBOARD_UID: portfolio
   ingress:
     enabled: false  # Grafana is exposed via Cloudflare Tunnel, not Ingress
 
