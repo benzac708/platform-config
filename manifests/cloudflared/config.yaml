@@ -13,7 +13,7 @@ data:
       - hostname: task-api.zachara.dev
         service: http://task-api.apps.svc.cluster.local:8000
       - hostname: status.zachara.dev
-        service: http://monitoring-grafana.monitoring.svc.cluster.local:80
+        service: http://status-page.apps.svc.cluster.local:8000
       - hostname: grafana.zachara.dev
         service: http://monitoring-grafana.monitoring.svc.cluster.local:80
       - hostname: argocd.zachara.dev
