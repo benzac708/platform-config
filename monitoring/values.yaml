@@ -4,7 +4,7 @@
 
 grafana:
   adminUser: admin
-  adminPassword: change-me  # replace with a real secret in Step 6
+  adminPassword: Grafana123!  # rotate before production
   ingress:
     enabled: false  # Grafana is exposed via Cloudflare Tunnel, not Ingress
 
