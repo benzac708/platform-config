@@ -1,0 +1,19 @@
+# kube-prometheus-stack values for the k3d portfolio cluster.
+# Pinned chart version: 65.0.0 (see apps/monitoring.yaml).
+# Applied during Step 6 of the build sequence.
+
+grafana:
+  adminUser: admin
+  adminPassword: change-me  # replace with a real secret in Step 6
+  ingress:
+    enabled: false  # Grafana is exposed via Cloudflare Tunnel, not Ingress
+
+prometheus:
+  prometheusSpec:
+    retention: 7d
+    resources:
+      requests:
+        cpu: 200m
+        memory: 512Mi
+
+# Loki is installed separately as a subchart or standalone in Step 6.

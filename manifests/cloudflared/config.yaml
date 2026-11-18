@@ -1,0 +1,19 @@
+# ConfigMap for cloudflared ingress rules (mounted as /etc/cloudflared/config.yaml)
+# Applied during Step 5 of the build sequence.
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cloudflared-config
+  namespace: platform
+data:
+  config.yaml: |
+    tunnel: <tunnel-id>
+    credentials-file: /etc/cloudflared/creds.json
+    ingress:
+      - hostname: task-api.zachara.dev
+        service: http://task-api.apps.svc.cluster.local:8000
+      - hostname: grafana.zachara.dev
+        service: http://grafana.monitoring.svc.cluster.local:3000
+      - hostname: argocd.zachara.dev
+        service: https://argocd-server.argocd.svc.cluster.local
+      - service: http_status:404
