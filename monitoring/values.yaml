@@ -5,6 +5,11 @@
 grafana:
   adminUser: admin
   adminPassword: Grafana123!  # rotate before production
+  grafana.ini:
+    auth.anonymous:
+      enabled: true
+      org_name: Main Org.
+      org_role: Viewer
   ingress:
     enabled: false  # Grafana is exposed via Cloudflare Tunnel, not Ingress
 
