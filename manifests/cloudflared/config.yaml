@@ -10,8 +10,6 @@ data:
     tunnel: 32e7ab29-2bbc-4f2f-ba86-6f139d50b7b4
     credentials-file: /etc/cloudflared/creds.json
     ingress:
-      - hostname: task-api.zachara.dev
-        service: http://task-api.apps.svc.cluster.local:8000
       - hostname: status.zachara.dev
         service: http://status-page.apps.svc.cluster.local:8000
       - hostname: grafana.zachara.dev
