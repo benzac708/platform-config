@@ -15,6 +15,15 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: monitoring
+  # k3s v1.35 adds status.terminatingReplicas to Deployments, a field that is
+  # not in Argo CD's bundled OpenAPI schema. Without this ignore rule the diff
+  # engine throws a ComparisonError and the app shows Unknown/OutOfSync, which
+  # disables selfHeal even though every pod is Healthy and Running.
+  ignoreDifferences:
+    - group: apps
+      kind: Deployment
+      jsonPointers:
+        - /status/terminatingReplicas
   syncPolicy:
     automated:
       prune: true
