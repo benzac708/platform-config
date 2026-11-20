@@ -3,8 +3,8 @@
 # Applied during Step 6 of the build sequence.
 
 grafana:
-  adminUser: admin
-  adminPassword: Grafana123!  # rotate before production
+  admin:
+    existingSecret: grafana-admin
   grafana.ini:
     auth.anonymous:
       enabled: true
@@ -24,4 +24,8 @@ prometheus:
         cpu: 200m
         memory: 512Mi
 
-# Loki is installed separately as a subchart or standalone in Step 6.
+# Alertmanager disabled in v1 (no alerts defined). Re-enable in v2.
+alertmanager:
+  enabled: false
+
+# Loki + Promtail installed as separate Argo CD apps (warden-config/loki/).
