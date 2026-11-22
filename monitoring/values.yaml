@@ -7,9 +7,7 @@ grafana:
     existingSecret: grafana-admin
   grafana.ini:
     auth.anonymous:
-      enabled: true
-      org_name: Main Org.
-      org_role: Viewer
+      enabled: false
   env:
     GF_DASHBOARDS_DEFAULT_HOME_DASHBOARD_PATH: /d/portfolio/portfolio
     GF_DASHBOARDS_DEFAULT_HOME_DASHBOARD_UID: portfolio
